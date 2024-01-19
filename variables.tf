@@ -7,5 +7,5 @@ variable "location" {
 }
 
 variable "azurerm_virtual_network" {
-    default = "myTFVnet007"
+    default = "myTFVnet"
 }
