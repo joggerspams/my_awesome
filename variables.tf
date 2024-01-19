@@ -1,5 +1,5 @@
 variable "resource_group_name" {
-  default = "myTFResourceGroup"
+  default = "myTFResourceGroup2"
 }
 
 variable "location" {
