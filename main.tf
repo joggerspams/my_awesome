@@ -41,10 +41,3 @@ resource "azurerm_virtual_network" "vnet" {
   }
 }
 
-
-resource "github_repository" "example" {
-    name = "my_awesome"
-    description = "Really good"
-    visibility = "public"
-}
-
