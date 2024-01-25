@@ -27,7 +27,7 @@ resource "azurerm_resource_group" "rg" {
     Environment = "Terraform Getting Started"
     Team = "DevOps"
 
-  resource "time_sleep" "wait_rg_complete" {
+resource "time_sleep" "wait_rg_complete" {
     create_duration = "1m"
     depends_on = [azurerm_resource_group.rg]
   }
