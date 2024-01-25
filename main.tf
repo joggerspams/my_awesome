@@ -26,12 +26,15 @@ resource "azurerm_resource_group" "rg" {
   tags = {
     Environment = "Terraform Getting Started"
     Team = "DevOps"
+
+  resource "time_sleep" "wait_rg_complete" {
+    create_duration = "1m"
+    depends_on = [azurerm_resource_group.rg]
   }
 }
 
 # Create a virtual network
 resource "azurerm_virtual_network" "vnet" {
-  create_duration     = 1m
   name                = var.azurerm_virtual_network
   address_space       = ["10.0.0.0/16"]
   location            = var.location
