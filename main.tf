@@ -22,18 +22,13 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
+  create_duration = "60s"
   
   tags = {
     Environment = "Terraform Getting Started"
     Team = "DevOps"
   }
 }
-
-
-resource "time_sleep" "wait_60_seconds" {
-  create_duration = "60s"
-}
-
 
 
 # Create a virtual network
