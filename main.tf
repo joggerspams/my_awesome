@@ -29,14 +29,9 @@ resource "azurerm_resource_group" "rg" {
   }
 }
 
-resource "time_sleep" "wait_60_seconds" {
-  depends_on = [var.resource_group_name]
-
-  create_duration = "60s"
-}
-
 # Create a virtual network
 resource "azurerm_virtual_network" "vnet" {
+  create_duration     = 1m
   name                = var.azurerm_virtual_network
   address_space       = ["10.0.0.0/16"]
   location            = var.location
