@@ -26,11 +26,6 @@ resource "azurerm_resource_group" "rg" {
   tags = {
     Environment = "Terraform Getting Started"
     Team = "DevOps"
-
-resource "time_sleep" "wait_60_seconds" {
-    depends_on = [azurerm_resource_group.rg]
-    create_duration = "60s"
-  }
 }
 
 # Create a virtual network
@@ -42,7 +37,6 @@ resource "azurerm_virtual_network" "vnet" {
 
   tags = {
     Titleist = "ProV1"
-  time_sleep = [time_sleep.wait_60_seconds]
   }
 }
 
