@@ -30,7 +30,7 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "time_sleep" "wait_60_seconds" {
-  depends_on = [azurerm_resource_group]
+  depends_on = [var.resource_group_name]
 
   create_duration = "60s"
 }
