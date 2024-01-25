@@ -42,6 +42,7 @@ resource "azurerm_virtual_network" "vnet" {
 
   tags = {
     Titleist = "ProV1"
+  time_sleep = [time_sleep.wait_60_seconds]
   }
 }
 
